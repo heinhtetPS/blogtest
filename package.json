@@ -1,0 +1,28 @@
+{
+  "name": "blogtest",
+  "version": "1.0.0",
+  "description": "test blog",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heinhtetPS/blogtest.git"
+  },
+  "keywords": [
+    "blog",
+    "test"
+  ],
+  "author": "heinhtetps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heinhtetPS/blogtest/issues"
+  },
+  "homepage": "https://github.com/heinhtetPS/blogtest#readme"
+}
