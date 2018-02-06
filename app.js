@@ -1,8 +1,17 @@
 require('dotenv').config();
+
+//Main framework
 const express = require('express');
+//middleware for logging
 const morgan = require('morgan');
+//simplify directory paths (not sure how)
 const path = require('path');
+//file reader/writer
 const fs = require('fs');
+//id generator
+const uuid = require('uuid/v1');
+//to parse html forms
+const bodyParser = require('body-parser');
 
 //make the app
 const app = express();
@@ -11,14 +20,23 @@ const app = express();
 const blogFile = fs.readFileSync('./seeds/blogs.json', 'utf-8');
 const blogArray = JSON.parse(blogFile);
 
-//render index
+//old test render
 // app.get('/', (req, res) =>
 //   res.render('hello'));
+
+//render index
 app.get('/', (req, res) =>
   res.render('index', {
     blogs: blogArray
   })
 );
+
+// when I put this in, all the css for index disappears. Why?
+// app.get('/:info', (req, res) => {
+//     // we have access to the params in our request object
+//     res.end(req.params.info)
+//     }
+// );
 
 //server log
 app.listen(3000, () => console.log('i am listening on port 3000'));
