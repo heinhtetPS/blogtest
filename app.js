@@ -12,13 +12,13 @@ const blogFile = fs.readFileSync('./seeds/blogs.json', 'utf-8');
 const blogArray = JSON.parse(blogFile);
 
 //render index
-app.get('/', (req, res) =>
-  res.render('hello'));
 // app.get('/', (req, res) =>
-//   res.render('index', {
-//     blogs: blogArray
-//   })
-// );
+//   res.render('hello'));
+app.get('/', (req, res) =>
+  res.render('index', {
+    blogs: blogArray
+  })
+);
 
 //server log
 app.listen(3000, () => console.log('i am listening on port 3000'));
