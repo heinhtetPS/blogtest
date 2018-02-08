@@ -12,6 +12,8 @@ const fs = require('fs');
 const uuid = require('uuid/v1');
 //to parse html forms
 const bodyParser = require('body-parser');
+//for overriding http method, so we can do put and delete in html forms
+const methodOverride = require('method-override');
 
 //make the app
 const app = express();
@@ -45,6 +47,8 @@ app.listen(3000, () => console.log('i am listening on port 3000'));
 app.use(morgan('combined'));
 // SERVING STATIC FILES
 app.use(express.static(path.join(__dirname, 'styles')));
+// put & delete for HTML forms
+app.use(methodOverride('_method'));
 
 //setting where views go, what to view with
 app.set('views', 'views');
